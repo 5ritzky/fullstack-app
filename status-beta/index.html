@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1120"><meta name="description" content="Статус — экспериментальная социальная RPG о последствиях решений в Меридиан-Групп."><title>СТАТУС · тестовая арка</title><style>
+:root{color-scheme:dark;--bg:#0b1120;--surface:#141d2d;--surface2:#1c293b;--line:#30405a;--text:#eef2f9;--muted:#a9b8cc;--accent:#72d6bb;--accent2:#9bdff1;--danger:#ff9b9b;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#08101e,#101b2b 60%,#10141e);color:var(--text);min-height:100vh}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:not-allowed}a{color:var(--accent2)}.layout{max-width:1160px;margin:0 auto;padding:24px 18px 60px}.brand{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:22px}.brand h1{font-size:1.35rem;letter-spacing:.28em;margin:0}.brand p{font-size:.78rem;color:var(--muted);margin:6px 0}.label{font-size:.73rem;letter-spacing:.17em;text-transform:uppercase;color:var(--accent)}.badge{border:1px solid var(--line);border-radius:100px;padding:7px 12px;color:var(--muted);font-size:.74rem}.columns{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(255px,.83fr);gap:18px}.panel{border:1px solid var(--line);border-radius:18px;background:rgba(20,29,45,.94);box-shadow:0 12px 44px #0002}.story{padding:30px}.story h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;margin:13px 0 20px;letter-spacing:-.03em}.story .lead{font-size:1.08rem;line-height:1.72;color:#dce6f2;max-width:65ch}.section-title{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin:28px 0 12px}.reactions{display:grid;gap:8px}.reaction{border-left:2px solid var(--accent);background:#1c293b;padding:12px 15px;line-height:1.55;margin:0;color:#c9d7e6}.choices{display:grid;gap:12px;margin-top:18px}.choice{width:100%;display:flex;align-items:flex-start;gap:16px;border:1px solid #38516a;background:#1c2b3e;border-radius:12px;padding:17px 16px;text-align:left;color:var(--text);transition:background .12s,border-color .12s}.choice:hover,.choice:focus-visible{background:#253c51;border-color:var(--accent);outline:none}.choice-id{color:var(--accent);font-size:.78rem;font-weight:700;white-space:nowrap;min-width:70px;padding-top:2px}.choice-label{line-height:1.5}.side{display:grid;gap:16px;align-content:start}.side .panel{padding:22px}.side h3{margin:0 0 14px;font-size:1rem}.status{font-weight:700;font-size:1.6rem;color:var(--accent);margin:10px 0}.small{font-size:.84rem;color:var(--muted)}.scores{display:flex;gap:8px;flex-wrap:wrap}.metric{background:#24364a;border-radius:8px;padding:7px 10px;font-size:.82rem}.relrow{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #26394d;font-size:.88rem}.good{color:#8ce0bf}.bad{color:#f5a3a3}.neutral{color:#a6b5c9}.obligation{padding:10px;border-radius:8px;background:#223044;font-size:.86rem;line-height:1.5}.muted{color:var(--muted);line-height:1.5}.message{border-left:2px solid #a7b9d7;padding-left:14px;line-height:1.6;color:#d6e2f0}.result{margin-top:25px;padding:20px;border:1px solid #5e9b8b;border-radius:13px;background:#172f2f}.result h3{font-size:1.6rem;margin:7px 0 12px}.result p{line-height:1.6}.controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}.ctrl{background:transparent;color:var(--text);border:1px solid var(--line);padding:10px 14px;border-radius:9px;font-size:.84rem}.ctrl:hover{border-color:var(--accent)}.notice{padding:10px 13px;border:1px solid var(--accent);color:var(--accent);border-radius:8px;margin-bottom:15px}.feedback{margin-top:18px;padding:26px}.feedback h2{margin:0 0 8px}.feedback p{color:var(--muted);line-height:1.55}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--muted)}.field textarea{background:#0f1928;border:1px solid var(--line);border-radius:9px;color:var(--text);padding:10px;min-height:80px;resize:vertical}.field textarea:focus-visible{outline:1px solid var(--accent)}.logentry{font-size:.74rem;padding:5px 0;color:var(--muted);border-bottom:1px solid #2a3a4c}footer{color:var(--muted);font-size:.76rem;margin-top:22px;line-height:1.55}#reporttext{width:100%;height:140px;background:#07101a;color:#fff}summary{cursor:pointer;color:var(--muted);margin-top:10px}@media(max-width:820px){.columns{grid-template-columns:1fr}.story{padding:21px}.side{grid-template-columns:repeat(2,minmax(0,1fr))}.fields{grid-template-columns:1fr}}@media(max-width:500px){.brand{align-items:flex-start}.side{grid-template-columns:1fr}.choice{gap:8px}.choice-id{min-width:65px}.layout{padding:14px 12px 35px}.feedback{padding:17px}}
+
+</style></head>
+<body><div class="layout">
+ <header class="brand"><div><h1>СТАТУС</h1><p>МЕРИДИАН-ГРУПП · ИНТЕРАКТИВНАЯ СОЦИАЛЬНАЯ RPG</p></div><span class="badge">BETA · НЕ КАНОНИЧЕСКИЕ ПРАВИЛА СТАТУСОВ</span></header>
+ <p id="notice" class="notice" role="status" hidden></p>
+ <div class="columns"><main class="panel story" aria-label="Игровая сцена"><div class="label" id="chapter"></div><h2 id="title"></h2><p class="lead" id="lead"></p>
+ <div class="section-title">Что изменилось в окружении</div><div id="memory" class="reactions"></div>
+ <div class="section-title">Последнее последствие</div><p id="lastmessage" class="message"></p>
+ <section id="result" class="result" hidden><div class="label">ФИНАЛ АРКИ</div><h3 id="end-title"></h3><p id="end-explanation"></p><p id="end-status"></p><p class="small">Центральный конфликт разрешён. Возможное продолжение не требуется для финала.</p></section>
+ <div class="section-title">Ваш следующий ход</div><div id="choices" class="choices"></div>
+ <div class="controls"><button class="ctrl" id="undo" type="button">↶ Отменить ход</button><button class="ctrl" id="export" type="button">Экспорт сохранения</button><label class="ctrl" style="cursor:pointer">Импорт сохранения<input id="import" type="file" accept=".json,application/json" style="display:none"></label><button class="ctrl" id="reset" type="button">Новая игра</button></div></main>
+ <aside class="side" aria-label="Состояние игры"><section class="panel"><h3>Социальное положение</h3><div id="status" class="status"></div><div class="small">Пройдено дней первой недели: <span id="stepcount"></span></div><div class="section-title">Показатели (не статус)</div><div id="score" class="scores"></div></section><section class="panel"><h3>Отношения</h3><div id="rel"></div><p class="small">От −5 до +5. Симпатия и полномочия — не одно и то же.</p></section><section class="panel"><h3>Обязательства</h3><div id="obligations"></div></section><section class="panel"><h3>Проверяемость</h3><div class="small">Выборов: <strong id="actioncount"></strong>. Журнал доступен локально; внешняя аналитика не ведётся.</div><button id="diagnostics" type="button" class="ctrl" style="margin-top:12px">Показать / скрыть события</button><div id="debug" hidden><div id="log"></div></div></section></aside></div>
+ <section class="panel feedback"><h2>Обратная связь тестировщика</h2><p>Проверьте различие четырёх стратегий, влияние обязательств и обоснованность статуса. Отчёт формируется на устройстве; он не отправляется автоматически. Персональные данные не нужны.</p><div class="fields"><label class="field">Что проверял?<textarea id="what" placeholder="Например: наличие обязательств в союзе"></textarea></label><label class="field">Что ожидал?<textarea id="expected" placeholder="Как должно было сработать"></textarea></label><label class="field">Что получил?<textarea id="observed" placeholder="Как сработало на самом деле"></textarea></label><label class="field">Стратегия и комментарии<textarea id="strategy" placeholder="Сотрудничество / Независимость / Конфронтация / Союз"></textarea></label></div><div class="controls"><button id="copy-report" class="ctrl">Скопировать отчёт</button><button id="export-report" class="ctrl">Скачать отчёт</button></div><textarea id="reporttext" hidden readonly></textarea></section>
+ <footer>Тестовая демонстрация механики v0.4.0-beta. Набор правил переходов разработан как проверяемая гипотеза, а не замена утверждённой v0.3. Без cookies, рекламы и отправки событий на сервер. Локальные сохранения могут быть удалены браузером.</footer>
+</div><script>
+/* STATUS BETA: experimental rules pending canonical v0.3 reconciliation.
+   Pure deterministic state machine; no browser APIs or clock reads. */
+(function (root, factory) {
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.StatusEngine = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+  const VERSION = '0.4.0-beta';
+  const NPC = ['vitaly','olga','it','team'];
+  const STATUS_PRIORITY = ['Лидер','Авторитет','Солдат','Изгой','Зависимый','Белые воротнички','Новичок','Независимый'];
+  const TITLES = { vitaly: 'Виталий · руководитель', olga: 'Ольга · HR', it: 'ИТ-группа', team: 'Рабочая команда' };
+  const DEFAULT_SCORES = { R: 40, S: 40, P: 40 };
+  const CHOICES = {
+    '1.1A': {label:'Выполнить распоряжение Виталия и сохранить копию графика', score:{S:2}, relation:{vitaly:1}, facts:['schedule_copy'], msg:'Виталий отмечает дисциплину. У вас остаётся копия старого графика.'},
+    '1.1B': {label:'Указать на расхождение в табеле и попросить объяснение', score:{R:2}, relation:{it:1}, facts:['anomaly_noted'], msg:'ИТ-группа соглашается проверить время изменений. Ответ руководителя остаётся уклончивым.'},
+    '1.1C': {label:'Не спорить на совещании, выслушать сотрудников', score:{P:2}, relation:{team:1}, facts:['team_testimony'], msg:'Коллеги рассказывают, что недостача часов повторилась у нескольких человек.'},
+    '1.2A': {label:'Передать команде сведения о возможной ошибке', score:{P:2}, relation:{team:1,vitaly:-1}, facts:['team_informed'], msg:'Коллеги готовы сравнить личные записи; Виталий считает обсуждение преждевременным.'},
+    '1.2B': {label:'Оформить служебную заметку без обвинений', score:{S:2}, relation:{olga:1}, facts:['formal_note'], msg:'Ольга регистрирует заметку как обращение, но не подтверждает ошибку.'},
+    '1.2C': {label:'Запросить журнал правок у ИТ-группы', score:{R:2}, relation:{it:1}, facts:['log_requested'], msg:'ИТ-группа подтверждает наличие правок, но не раскрывает персональные данные.'},
+    '1.3A': {label:'Поддержать предложение о совместной сверке', score:{P:2}, relation:{team:1}, facts:['verification_supported'], msg:'Команда предлагает сверять факты по личным табелям.'},
+    '1.3B': {label:'Систематизировать хронологию без распространения', score:{S:2}, relation:{olga:1}, facts:['chronology_kept'], msg:'Вы собираете последовательность изменений. Дело можно проверить позже.'},
+    '1.3C': {label:'Предупредить Виталия о рисках неточного табеля', score:{R:2}, relation:{vitaly:1,team:-1}, facts:['vitaly_warned'], msg:'Виталий обещает обсудить вопрос, но коллеги не знают, что вы сообщили.'},
+    'HR_1.3D': {label:'Поговорить с Ольгой конфиденциально (1.3D)', relation:{olga:1}, facts:['hr_1_3d_opened'], msg:'Ольга объясняет процедуру проверки: ИТ подтверждает правки, HR отвечает за корректировку, но официального решения ещё нет.'},
+    'ROUTE_COOP': {label:'Сотрудничество — провести исправление через Виталия и HR', facts:['route_cooperation'], relation:{vitaly:1}, msg:'Виталий предлагает совместную проверку; просит не публиковать выводы до сверки.'},
+    'ROUTE_IND': {label:'Независимость — собрать доказательства без покровителя', facts:['route_independence'], relation:{it:1}, msg:'ИТ-группа даст обезличенный журнал, если вы отделите факты от оценок.'},
+    'ROUTE_CON': {label:'Конфронтация — потребовать открытого рассмотрения', facts:['route_confrontation'], relation:{vitaly:-1}, msg:'Виталий возражает против публичного обвинения до завершения проверки.'},
+    'ROUTE_ALLY': {label:'Союз — объединить команду и ИТ вокруг общего требования', facts:['route_alliance'], relation:{team:1}, msg:'Команда готова действовать вместе, если у каждого будет понятная роль.'},
+    'COOP_OFFER': {label:'Закрепить совместную проверку письменным обязательством', relation:{vitaly:1,olga:1}, facts:['joint_review_accepted'], open:{id:'joint_review',to:'vitaly',title:'Провести совместную сверку'}, msg:'Виталий и Ольга согласовали проверку, вас включили в рабочую группу.'},
+    'COOP_DEFER': {label:'Согласиться устно и не брать обязательств', relation:{vitaly:-1}, facts:['joint_review_informal'], msg:'Виталий не включает вас в официальный список ответственных.'},
+    'IND_AUDIT': {label:'Сверить журналы с копиями смен и оформить методику', relation:{it:1,team:1}, facts:['independent_audit'], msg:'Два источника совпали: время правки и разница по сменам. ИТ подтверждает метод сверки.'},
+    'IND_SHORTCUT': {label:'Сделать выводы по слухам без исходных журналов', score:{P:4}, relation:{it:-1,team:-1}, facts:['unsupported_report'], msg:'Документ быстро расходится, но ИТ не может подтвердить ваши цифры.'},
+    'CON_CASE': {label:'Представить проверяемое досье с запросом публичных ответов', score:{R:2}, relation:{team:1,olga:-1}, facts:['public_case_documented'], msg:'Команда подтверждает фактическую часть; HR назначает слушание.'},
+    'CON_ACCUSATION': {label:'Публично обвинить руководство без проверки источников', score:{P:4}, relation:{vitaly:-2,olga:-2,team:-1}, facts:['unverified_accusation'], msg:'Виталий требует предъявить доказательства. Команда не готова подписаться под обвинением.'},
+    'ALLY_CHARTER': {label:'Зафиксировать коллективный мандат и роли участников', relation:{it:1,team:2}, facts:['coalition_charter'], open:{id:'coalition_duty',to:'team',title:'Представить позицию команды'}, msg:'Сотрудники подписали мандат; ИТ обязуется объяснить журнал, не передавая личных данных.'},
+    'ALLY_PERSONAL': {label:'Договориться с каждым по отдельности без общего мандата', relation:{team:1}, facts:['personal_promises'], msg:'Часть коллег согласна помочь, но представлять всю команду вас никто не уполномочивал.'},
+    'COOP_REVIEW': {label:'Довести совместную сверку до официального протокола', relation:{olga:1,team:1}, facts:['review_attempt'], msg:'HR фиксирует результаты сверки и отдельно проверяет, кто имел полномочия представлять проект.'},
+    'COOP_DELAY': {label:'Отложить проверку, сохранив отношения с Виталием', relation:{vitaly:1,team:-1}, facts:['review_delayed'], msg:'Вы не ухудшили отношения с руководителем, но сроки корректировки сорваны.'},
+    'IND_PUBLISH': {label:'Передать подтверждённую методику команде и ИТ', relation:{team:1,it:1}, facts:['method_shared'], msg:'ИТ и команда оценивают проверяемость доклада, а не вашу личную популярность.'},
+    'IND_SEAL': {label:'Оставить проверку у себя и выйти из конфликта', relation:{team:-1}, facts:['method_withheld'], msg:'Доказательства остаются у вас. Сотрудники не могут на них опереться.'},
+    'CON_HEARING': {label:'Потребовать решения на открытом слушании', relation:{vitaly:-1}, facts:['public_hearing'], msg:'Слушание становится проверкой не только табелей, но и надёжности ваших утверждений.'},
+    'CON_WITHDRAW': {label:'Отозвать личные обвинения, сохранив проверяемые факты', relation:{olga:1}, facts:['accusation_retracted'], msg:'Вы отделяете претензию к данным от обвинений конкретным людям.'},
+    'ALLY_VOTE': {label:'Получить коллективное подтверждение мандата и представить требования', relation:{team:1}, facts:['delegation_presented'], msg:'Команда голосует по полномочиям представителя; HR требует подтверждённый список.'},
+    'ALLY_FRAGMENT': {label:'Вести переговоры только от собственного имени', relation:{team:-1}, facts:['coalition_fragmented'], msg:'Вы избегаете коллективного риска, но коллеги больше не считают переговоры общими.'}
+  };
+  const WEEKS = [ ['1.1A','1.1B','1.1C'], ['1.2A','1.2B','1.2C'], ['1.3A','1.3B','1.3C'] ];
+  const ROUTES = ['ROUTE_COOP','ROUTE_IND','ROUTE_CON','ROUTE_ALLY'];
+  const ROUTE_OPTIONS = {
+    ROUTE_COOP: [['COOP_OFFER','COOP_DEFER'], ['COOP_REVIEW','COOP_DELAY']],
+    ROUTE_IND: [['IND_AUDIT','IND_SHORTCUT'], ['IND_PUBLISH','IND_SEAL']],
+    ROUTE_CON: [['CON_CASE','CON_ACCUSATION'], ['CON_HEARING','CON_WITHDRAW']],
+    ROUTE_ALLY: [['ALLY_CHARTER','ALLY_PERSONAL'], ['ALLY_VOTE','ALLY_FRAGMENT']]
+  };
+  function clone(s){return JSON.parse(JSON.stringify(s));}
+  function newGame(){return {version:VERSION,stage:'week1',day:0,step:0,route:null,score:{...DEFAULT_SCORES},rel:{vitaly:0,olga:0,it:0,team:0},facts:{},statusFacts:{},obligations:{},events:[],messages:[],actions:[],status:'Новичок',ending:null,seq:0};}
+  function append(s,type,source,payload){s.events.push({id:'ev-'+String(++s.seq).padStart(4,'0'),type,source,payload:clone(payload)});}
+  function has(s,k){return s.facts[k]===true;}
+  function options(s){
+    if(s.stage==='week1') {let o=[...WEEKS[s.day]];if(s.day===2 && has(s,'anomaly_noted') && has(s,'log_requested') && !has(s,'hr_1_3d_opened')) o.unshift('HR_1.3D');return o;}
+    if(s.stage==='route')return ROUTES.slice();
+    if(s.stage==='operation')return ROUTE_OPTIONS[s.route][0].slice();
+    if(s.stage==='response')return ROUTE_OPTIONS[s.route][1].slice();
+    return [];
+  }
+  function settle(s,id,status,source){if(!s.obligations[id] || s.obligations[id].status!=='open')return; s.obligations[id].status=status; append(s,'obligation.settled',source,{id,status});}
+  function socialFact(s,key,value,source,evidence,npc){s.statusFacts[key]=value;append(s,'status_fact.applied',source,{key,value,evidence,npc});}
+  function derivedStatus(s){
+    if(s.stage==='week1')return 'Новичок';
+    const f=s.statusFacts;
+    const eligible={ 'Солдат':!!f.team_delegate, 'Изгой':!!f.org_excluded, 'Белые воротнички':!!f.hr_formal_role, 'Независимый':!!f.independent_recognition };
+    // Novice is a fallback, not an always-active candidate (or it would block Independent).
+    for(const name of STATUS_PRIORITY){if(eligible[name])return name;}
+    return 'Новичок';
+  }
+  function conclude(s,source){
+    const r=s.route;let outcome,why;
+    if(r==='ROUTE_COOP') {
+      if(has(s,'joint_review_accepted') && has(s,'review_attempt')){
+        settle(s,'joint_review','fulfilled',source);socialFact(s,'hr_formal_role',true,source,'Протокол HR + поручение Виталия','olga');
+        outcome='Корректировка принята';why='Ольга оформила исправление табелей, Виталий подтвердил вашу ответственность за процедуру. Статус получил институциональное признание.';
+      }else{
+        settle(s,'joint_review','breached',source);outcome='Проверка завершена без вашей роли';why='HR закрыла текущий цикл сверки, но у вас нет подтверждённого поручения или выполненного обязательства.';
+      }
+    }else if(r==='ROUTE_IND'){
+      if(has(s,'independent_audit') && has(s,'method_shared')){
+        socialFact(s,'independent_recognition',true,source,'ИТ подтвердило метод, команда использует отчёт','it+team');
+        outcome='Независимая проверка принята';why='ИТ подтвердило воспроизводимость методики, команда воспользовалась результатами. Влияние признано без назначения сверху.';
+      }else{outcome='Личная проверка не стала общим ресурсом';why='Результат остался непроверенным либо закрытым. Доказанного признания независимой роли нет.';}
+    }else if(r==='ROUTE_CON'){
+      if(has(s,'unverified_accusation') && has(s,'public_hearing')){
+        socialFact(s,'org_excluded',true,source,'Решение HR об ограничении доступа + отсутствие поддержки команды','olga+team');
+        outcome='Расследование оспорило обвинение';why='На слушании личные обвинения не подтвердились. HR ограничила доступ к проекту, команда не стала поручаться за выводы.';
+      }else if(has(s,'public_case_documented') && has(s,'public_hearing')){
+        outcome='Открытая проверка изменила решение';why='HR пересмотрела спорный табель после доказательного слушания. Вы защитили позицию, но никто не присвоил вам новую формальную роль.';
+      }else{outcome='Конфликт урегулирован без статуса';why='Вы отказались от непроверенных обвинений. Команда может продолжить сверку, но новое социальное положение не подтверждено.';}
+    }else if(r==='ROUTE_ALLY'){
+      if(has(s,'coalition_charter') && has(s,'delegation_presented')){
+        settle(s,'coalition_duty','fulfilled',source);socialFact(s,'team_delegate',true,source,'Мандат команды + публичное подтверждение полномочий','team');
+        outcome='Коллектив добился представительства';why='Команда подтвердила ваш мандат, HR приняла коллективное обращение. Новая роль следует из делегирования, а не из симпатии.';
+      }else{settle(s,'coalition_duty','breached',source);outcome='Союз не оформился';why='Временное согласие не превратилось в коллективное поручение. Переговоры завершились индивидуальными ответами HR.';}
+    }
+    s.stage='ended';s.status=derivedStatus(s);s.ending={id:r+'-'+source,title:outcome,explanation:why,consequence:s.status,route:r};
+    append(s,'story_fact.set',source,{key:'arc_resolved',value:true});s.facts.arc_resolved=true;
+    append(s,'message.queued',source,{npc:'system',message:outcome});s.messages.push({npc:'system',message:outcome});
+  }
+  function dispatch(base,id){
+    if(!base || base.version!==VERSION)throw Error('Несовместимая версия сохранения');
+    if(!options(base).includes(id))throw Error('Недоступное или повторное действие: '+id);
+    const s=clone(base), c=CHOICES[id];
+    append(s,'choice.selected',id,{choice_id:id,stage:base.stage});s.actions.push(id);
+    for(const [key,delta] of Object.entries(c.score||{})){
+      const old=s.score[key];s.score[key]=Math.max(0,Math.min(100,old+delta)); append(s,'score.changed',id,{key,from:old,to:s.score[key]});
+    }
+    for(const [key,delta] of Object.entries(c.relation||{})){
+      const old=s.rel[key];s.rel[key]=Math.max(-5,Math.min(5,old+delta)); append(s,'relationship.changed',id,{npc:key,from:old,to:s.rel[key]});
+    }
+    for(const key of c.facts||[]){ if(!has(s,key)){s.facts[key]=true;append(s,'story_fact.set',id,{key,value:true});} }
+    if(c.open){s.obligations[c.open.id]={title:c.open.title,to:c.open.to,status:'open'};append(s,'obligation.opened',id,{...c.open});}
+    if(c.msg){s.messages.push({npc:'system',message:c.msg});append(s,'message.queued',id,{npc:'system',message:c.msg});}
+    if(id.startsWith('1.') && id!=='HR_1.3D'){
+      s.day++; if(s.day===3){s.stage='route';s.status='Новичок';}
+    }else if(ROUTES.includes(id)){s.route=id;s.stage='operation';s.step=0;}
+    else if(s.stage==='operation'){s.stage='response';s.step=1;}
+    else if(s.stage==='response')conclude(s,id);
+    if(s.stage!=='ended')s.status=derivedStatus(s);
+    return s;
+  }
+  const SCENE_TEXT = {
+    week1:[
+      {title:'День 1 · Несовпадение',lead:'«Меридиан-Групп». На утреннем совещании вы видите изменённый график смен. В старой распечатке несколько сотрудников работали дольше, чем указано в новой системе. Виталий просит закончить обсуждение до обеда.'},
+      {title:'День 2 · Кто владеет фактами',lead:'Сегодня график обсуждают по отдельности: сотрудники — между собой, HR — через обращения, ИТ — через журнал исправлений. Никто не обладает полной картиной.'},
+      {title:'День 3 · Граница полномочий',lead:'Появляются первые последствия. Необходимо выбрать, кому доверить дальнейшую проверку, и что делать со спорными данными.'}
+    ],
+    route:{title:'Неделя 2 · Решение',lead:'Расхождение подтверждено как предмет проверки, но его причина и ответственность пока не установлены. Выбирайте способ влияния. Нельзя получить статус одной удачной репликой.'},
+    operation:{title:'Цена выбранной стратегии',lead:'Ваша позиция стала известна участникам. Следующий шаг создаст или разрушит доказательную основу для признания.'},
+    response:{title:'Проверка обязательств',lead:'Финальная встреча завершит вопрос с графиком. Осталось решить, выполнить ли взятые условия и предъявить ли проверяемые основания.'}
+  };
+  function scene(s){
+    let base;
+    if(s.stage==='week1')base=SCENE_TEXT.week1[s.day];else base=SCENE_TEXT[s.stage] || {title:s.ending?.title || 'Завершено',lead:s.ending?.explanation||''};
+    let reactions=[];
+    if(s.stage!=='week1' || s.day>0){
+      reactions.push(s.rel.team>=2?'Команда обсуждает проблему открыто и готова сверять свидетельства.':s.rel.team<=-1?'Команда осторожна: ваши действия не всегда совпадали с её интересами.':'Команда наблюдает, насколько вы готовы учитывать её интересы.');
+      reactions.push(s.rel.vitaly>=2?'Виталий готов делегировать вам часть работы, но не формальную власть без решения.':s.rel.vitaly<=-1?'Виталий требует документальных оснований, а не личного доверия.':'Виталий ждёт, кто возьмёт ответственность за проверяемый результат.');
+      if(has(s,'log_requested'))reactions.push('ИТ помнит ваш запрос журнала правок; доступ предоставлен только в обезличенном виде.');
+      if(has(s,'hr_1_3d_opened'))reactions.push('Ольга помнит конфиденциальный разговор 1.3D, но не обещала должность.');
+      if(s.obligations.joint_review?.status==='open')reactions.push('Обязательство: совместная сверка открыта и может быть исполнена или нарушена.');
+      if(s.obligations.coalition_duty?.status==='open')reactions.push('Обязательство: команда ждёт представительства по согласованному мандату.');
+    }
+    return {title:base.title,lead:base.lead,reactions,choices:options(s).map(id=>({id,label:CHOICES[id].label})),ending:s.ending};
+  }
+  function diagnostic(s){return {version:s.version,status:s.status,route:s.route,actions:s.actions,score:s.score,rel:s.rel,obligations:s.obligations,statusFacts:s.statusFacts,events:s.events,ending:s.ending};}
+  return Object.freeze({VERSION,CHOICES,WEEKS,ROUTES,ROUTE_OPTIONS,NPC,TITLES,STATUS_PRIORITY,newGame,options,dispatch,scene,derivedStatus,diagnostic});
+});
+
+</script><script>
+(function(){
+  'use strict';
+  const E=window.StatusEngine;
+  const KEY='status-beta-playtest-v1';
+  let trail=[];
+  let state=E.newGame();
+  const $=id=>document.getElementById(id);
+  function replay(seq){ let s=E.newGame(); for(const id of seq){s=E.dispatch(s,id);} return s; }
+  function store(){try{localStorage.setItem(KEY,JSON.stringify({version:E.VERSION,actions:trail}));}catch(err){flash('Хранилище браузера недоступно: сохраните файл вручную.');}}
+  function hydrate(){try{const t=JSON.parse(localStorage.getItem(KEY)||'null');if(t && t.version===E.VERSION && Array.isArray(t.actions)){state=replay(t.actions);trail=t.actions.slice();}}catch(err){flash('Сохранение повреждено. Начата новая игра.');}}
+  function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
+  function flash(msg){let node=$('notice');if(node){node.textContent=msg;node.hidden=false;}}
+  function norm(n){return n>0?'+'+n:String(n);}
+  function render(){
+    const view=E.scene(state);
+    $('chapter').textContent=state.stage==='ended'?'ИСТОРИЯ ЗАВЕРШЕНА':state.stage==='week1'?'ПЕРВАЯ НЕДЕЛЯ · '+(state.day+1)+'/3':'ПРОВЕРКА И ПОСЛЕДСТВИЯ';
+    $('title').textContent=view.title;
+    $('lead').textContent=view.lead;
+    $('status').textContent=state.status;
+    $('stepcount').textContent=String(trail.filter(a=>a.startsWith('1.') && a!=='HR_1.3D').length)+'/3';
+    $('score').replaceChildren(...Object.entries(state.score).map(([k,v])=>el('span','metric',k+' '+v)));
+    const rel=$('rel');rel.replaceChildren();
+    for(const [k,title] of Object.entries(E.TITLES)){
+      const item=el('div','relrow');item.append(el('span','',title),el('strong',state.rel[k]>0?'good':state.rel[k]<0?'bad':'neutral',norm(state.rel[k])));rel.append(item);
+    }
+    const memories=$('memory');memories.replaceChildren();
+    for(const sentence of view.reactions){memories.append(el('p','reaction',sentence));}
+    if(view.reactions.length===0)memories.append(el('p','muted','Информация появится после первых решений.'));
+    $('obligations').replaceChildren(...Object.entries(state.obligations).map(([k,v])=>el('div','obligation',v.title+' · '+({open:'Открыто',fulfilled:'Исполнено',breached:'Нарушено'}[v.status]||v.status))));
+    if(!Object.keys(state.obligations).length)$('obligations').append(el('p','muted','Пока нет обязательств.'));
+    $('lastmessage').textContent=state.messages.length?state.messages.at(-1).message:'До первого решения никто не знает, как вы поведёте себя.';
+    const choices=$('choices');choices.replaceChildren();
+    for(const choice of view.choices){
+      const b=el('button','choice');b.type='button';b.append(el('span','choice-id',choice.id),el('span','choice-label',choice.label));b.addEventListener('click',()=>act(choice.id));choices.append(b);
+    }
+    $('result').hidden=!view.ending;
+    if(view.ending){$('end-title').textContent=view.ending.title;$('end-explanation').textContent=view.ending.explanation;$('end-status').textContent='Социальный статус: '+state.status;}
+    $('undo').disabled=trail.length===0;
+    $('actioncount').textContent=String(trail.length);
+    $('log').replaceChildren(...state.events.slice(-12).reverse().map(e=>el('div','logentry',`${e.id} · ${e.type} · ${e.source}`)));
+  }
+  function act(id){try{state=E.dispatch(state,id);trail.push(id);store();render();}catch(e){flash(e.message);}}
+  function saveFile(name,content,type){const blob=new Blob([content],{type});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),300);}
+  function report(){const fields=['what','expected','observed','strategy'];const values=Object.fromEntries(fields.map(k=>[k,$(k).value.trim()]));return ['СТАТУС · ОТЧЁТ ТЕСТИРОВЩИКА','Версия: '+E.VERSION,'Статус: '+state.status,'Маршрут: '+(state.route||'не выбран'),'Действия: '+trail.join(' → '),'Что проверял: '+values.what,'Ожидал: '+values.expected,'Получил: '+values.observed,'Стратегия / комментарии: '+values.strategy,'--- ДИАГНОСТИКА ---',JSON.stringify(E.diagnostic(state),null,2)].join('\n');}
+  $('undo').addEventListener('click',()=>{if(!trail.length)return;trail.pop();state=replay(trail);store();render();});
+  $('reset').addEventListener('click',()=>{if(!window.confirm('Начать заново? Текущие действия будут сброшены.'))return;trail=[];state=E.newGame();store();render();});
+  $('export').addEventListener('click',()=>saveFile('status-save-beta.json',JSON.stringify({version:E.VERSION,actions:trail},null,2),'application/json'));
+  $('import').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const data=JSON.parse(await f.text());if(data.version!==E.VERSION||!Array.isArray(data.actions)||data.actions.length>100)throw Error('Неподдерживаемое сохранение');const next=replay(data.actions);trail=data.actions.slice();state=next;store();render();flash('Сохранение восстановлено.');}catch(err){flash('Импорт не выполнен: '+err.message);}e.target.value='';});
+  $('copy-report').addEventListener('click',async()=>{const text=report();try{await navigator.clipboard.writeText(text);flash('Отчёт скопирован. Отправьте его организатору тестирования.');}catch(e){$('reporttext').hidden=false;$('reporttext').value=text;$('reporttext').focus();$('reporttext').select();flash('Скопируйте выделенный отчёт вручную.');}});
+  $('export-report').addEventListener('click',()=>saveFile('status-beta-bug-report.txt',report(),'text/plain;charset=utf-8'));
+  $('diagnostics').addEventListener('click',()=>{$('debug').hidden=!$('debug').hidden;});
+  hydrate();render();
+})();
+
+</script></body></html>
