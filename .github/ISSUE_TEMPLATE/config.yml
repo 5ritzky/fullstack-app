@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Play STATUS BETA"
+    url: https://5ritzky.github.io/fullstack-app/status-beta/
+    about: "Open the browser game before submitting playtest feedback."
+  - name: "Read the playtest guide"
+    url: https://github.com/5ritzky/fullstack-app/blob/main/PLAYTEST.md
+    about: "Learn what to test and how to submit a useful report."
